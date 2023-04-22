@@ -7,9 +7,8 @@
             text: "YoutubeDownloader"
             font_size: 64
             color: 1, 1, 1
-        Label:
-            text: "-"
-            font_size: 64
+        TextInput:
+            font_size: 15
         Label:
             id: download_label
             text: "-"
@@ -18,4 +17,4 @@
             text: "Download"
             font_size: 32
             size: 50, 30
-            on_press: root.update_download_text()
+            on_press: root.update()
