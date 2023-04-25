@@ -1,20 +1,40 @@
 <Root>:
-    download_label: download_label
+    log_text: log_text
+    user_input: user_input
 
     BoxLayout:
         orientation: 'vertical'
         Label:
-            text: "YoutubeDownloader"
-            font_size: 64
+            text: "Youtube Downloader"
+            font_size: 100
             color: 1, 1, 1
         TextInput:
-            font_size: 15
-        Label:
-            id: download_label
-            text: "-"
-            font_size: 15
-        Button:
-            text: "Download"
-            font_size: 32
-            size: 50, 30
-            on_press: root.update()
+            id: user_input
+            padding_x: [20, 20]
+            padding_y: [20, 0]
+            font_size: 40
+        ScrollView:
+            do_scroll_x: True
+            size_hint_y: 2
+            Label:
+                id: log_text
+                padding_x: 20
+                padding_y: 20
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                text: ""
+                font_size: 35
+        BoxLayout:
+            Button:
+                text: "Clear input"
+                size_hint: 0.25, 0.40
+                pos: 350, 100
+                font_size: 45
+                on_press: root.clear_text()
+            Button:
+                text: "Download mp3"
+                size_hint: 0.25, 0.40
+                pos: 350, 200
+                font_size: 45
+                on_press: root.audio_update()
